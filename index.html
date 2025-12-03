@@ -4,45 +4,49 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>slimetype</title>
+  <meta name="description"
+    content="A clean, fun, customizable typing test and practice site. Track your speed, accuracy, and improve your typing!">
+  <meta name="keywords" content="typing test, practice, speed, accuracy, slimetype, js.org">
+  <title>Slimetype</title>
   <script type="module" crossorigin src="/assets/index.js"></script>
   <link rel="stylesheet" crossorigin href="/assets/index.css">
 </head>
 
 <body>
-  <div id="bg-effects"></div>
-  <div class="top-menu">
-    <button class="config-btn" id="theme-btn">theme: dark</button>
-  </div>
+  <div id="bg-effects" aria-hidden="true"></div>
+  <nav class="top-menu" aria-label="Theme Settings">
+    <button class="config-btn" id="theme-btn" aria-label="Toggle Theme">theme: dark</button>
+  </nav>
 
-  <div class="container">
-    <div class="config-bar">
-      <div class="config-group" id="word-count-selector">
-        <button class="config-btn active" data-mode="words" data-value="25">25</button>
-        <button class="config-btn" data-mode="words" data-value="50">50</button>
-        <button class="config-btn" data-mode="words" data-value="100">100</button>
+  <main class="container">
+    <div class="config-bar" role="toolbar" aria-label="Test Configuration">
+      <div class="config-group" id="word-count-selector" role="group" aria-label="Word Count">
+        <button class="config-btn" data-type="words" data-value="10" aria-label="10 words">10</button>
+        <button class="config-btn active" data-type="words" data-value="25" aria-label="25 words">25</button>
+        <button class="config-btn" data-type="words" data-value="50" aria-label="50 words">50</button>
+        <button class="config-btn" data-type="words" data-value="100" aria-label="100 words">100</button>
       </div>
-      <div class="config-divider"></div>
+      <div class="config-separator" role="separator"></div>
       <div class="config-swap-wrapper">
-        <div class="config-group" id="timed-group">
-          <button class="config-btn" data-mode="timed" id="timed-btn">time</button>
+        <div class="config-group" id="timed-group" role="group" aria-label="Timed Mode">
+          <button class="config-btn" data-mode="timed" id="timed-btn" aria-label="Timed Mode">time</button>
         </div>
-        <div class="config-group" id="time-selector">
-          <button class="config-btn" data-type="time" data-value="15">15s</button>
-          <button class="config-btn" data-type="time" data-value="30">30s</button>
-          <button class="config-btn" data-type="time" data-value="60">60s</button>
-          <button class="config-btn" data-type="time" data-value="120">120s</button>
+        <div class="config-group" id="time-selector" role="group" aria-label="Time Duration">
+          <button class="config-btn" data-type="time" data-value="15" aria-label="15 seconds">15s</button>
+          <button class="config-btn" data-type="time" data-value="30" aria-label="30 seconds">30s</button>
+          <button class="config-btn" data-type="time" data-value="60" aria-label="60 seconds">60s</button>
+          <button class="config-btn" data-type="time" data-value="120" aria-label="120 seconds">120s</button>
         </div>
       </div>
-      <div class="config-divider"></div>
-      <div class="config-group" id="endless-group">
-        <button class="config-btn" data-mode="endless">endless</button>
+      <div class="config-separator" role="separator"></div>
+      <div class="config-group" id="endless-group" role="group" aria-label="Endless Mode">
+        <button class="config-btn" data-mode="endless" aria-label="Endless Mode">endless</button>
       </div>
     </div>
 
     <header>
-      <div class="logo">slimetype</div>
-      <div class="stats">
+      <h1 class="logo">slimetype</h1>
+      <div class="stats" aria-live="polite">
         <div class="stat" id="progress-stat">
           <div class="stat-label">Words</div>
           <div class="stat-value" id="timer">0/25</div>
@@ -109,7 +113,7 @@
     <div class="attribution">
       Created with ❤️ by Maxwell, Qwen3-coder, Kimi-K2, and Antigravity 😺
     </div>
-  </div>
+    </div>
 
 </body>
 
