@@ -9,6 +9,7 @@
     --error-extra-color: #994040;
     --caret-color: #a8e6cf;
     --current-word-bg: rgba(168, 230, 207, 0.1);
+    --config-bar-bg: rgba(0, 0, 0, 0.2);
 }
 
 body.theme-light {
@@ -21,6 +22,7 @@ body.theme-light {
     --error-extra-color: #d46a6a;
     --caret-color: #e680e0;
     --current-word-bg: rgba(230, 128, 224, 0.15);
+    --config-bar-bg: rgba(180, 120, 180, 0.15);
 }
 
 /* Top Left Menu */
@@ -121,17 +123,18 @@ body {
     justify-content: center;
     align-items: center;
     gap: 1rem;
-    background: rgba(0, 0, 0, 0.2);
+    background: var(--config-bar-bg);
     padding: 10px 20px;
     border-radius: 8px;
     align-self: center;
     margin-bottom: 1rem;
-    transition: opacity 0.3s;
+    transition: opacity 0.3s, visibility 0.3s;
 }
 
 .config-group {
     display: flex;
     gap: 0.5rem;
+    background: transparent;
 }
 
 .config-divider {
@@ -477,7 +480,6 @@ header {
 }
 
 .focus-mode .config-bar,
-.focus-mode .top-menu,
 .focus-mode .attribution {
     opacity: 0;
     visibility: hidden;
